@@ -85,4 +85,40 @@ public class HomeWork_02 {
         driver.quit();
     }
 
+    @Test
+    public void findElementByCssSelector() {
+
+        //tagName -> css
+        //driver.findElement(By.tagName("h2"));
+        driver.findElement(By.cssSelector("h2"));
+        //id -> css - #
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.cssSelector("#mob-menu-button"));
+
+        //className -> css - .
+        //driver.findElement(By.className("header-menu"));
+        driver.findElement(By.cssSelector(".header-menu"));
+
+        //[key='value']
+        driver.findElement(By.cssSelector("[name='NewsletterEmail']"));
+
+        //contains -> * Checks if the href attribute contains the substring 'producttag' anywhere in its value.
+        driver.findElement(By.cssSelector("[href*='producttag']"));
+
+        //start with -> ^
+        driver.findElement(By.cssSelector("[id^='small-']"));
+
+        //end on -> $
+        driver.findElement(By.cssSelector("[href$='electronics']"));
+
+        // > direct child combintator
+        // selects an <img> tag that is a direct child of .nivo-imageLink
+        driver.findElement(By.cssSelector(".nivo-imageLink>img"));
+
+        //selects the fifth child among its siblings within the class top-menu-triangle
+        driver.findElement(By.cssSelector(".top-menu-triangle:nth-child(2)"));
+        // or the same but using > and nth-child together
+        driver.findElement(By.cssSelector(".top-menu>li:nth-child(3)"));
+
+    }
 }
