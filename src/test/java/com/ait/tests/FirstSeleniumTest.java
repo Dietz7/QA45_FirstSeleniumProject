@@ -41,7 +41,6 @@ public class FirstSeleniumTest {
 
     }
 
-
     //test - we give a name
     @Test
     public void openChromeTest() {
@@ -141,7 +140,48 @@ public class FirstSeleniumTest {
         driver.findElement(By.cssSelector(".top-cities>a:nth-child(1)"));
     }
 
+    @Test
+    public void findElementByXpath() {
+        // xpath -> //*[@key='value']
+        //driver.findElement(By.tagName("h1"));
+        driver.findElement(By.xpath("//h1"));
+
+        driver.findElement(By.xpath("//*[@id='city']"));
+        // or driver.findElement(By.xpath("//input[@id='city']"));
+
+        driver.findElement(By.xpath("//*[@class='header']"));
+
+        driver.findElement(By.xpath("//*[@type='submit']"));
+        driver.findElement(By.xpath("//*[@href='/search']"));
+        driver.findElement(By.xpath("//*[@for='dates']"));
+
+        // contains text - this is method that is why () after contains, a good strategy when we do not have another choice
+        //
+        driver.findElement(By.xpath("//*[contains(.,'Find your')]"));
+        // equals
+        driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+        driver.findElement(By.xpath("//*[.='Find your car now!']"));
+
+        driver.findElement(By.xpath("//*[contains(@href,'results?')]"));
+
+        // starts with
+        driver.findElement(By.xpath("//*[starts-with(@href,'/let')]"));
+
+
+        //parent
+        driver.findElement(By.xpath("//h1/.."));
+        driver.findElement(By.xpath("//h1/parent::*"));
+        driver.findElement(By.xpath("//h1/parent::div"));
+
+        //ancestor
+        driver.findElement(By.xpath("//h1/ancestor::*"));// first ancestor
+        driver.findElement(By.xpath("//h1/ancestor::div"));//two steps below
+        driver.findElement(By.xpath("//h1/ancestor::div[2]")); // one step below
+    }
 }
+
+
+
 
 
 
