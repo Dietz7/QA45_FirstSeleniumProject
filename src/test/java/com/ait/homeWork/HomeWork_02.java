@@ -115,10 +115,49 @@ public class HomeWork_02 {
         // selects an <img> tag that is a direct child of .nivo-imageLink
         driver.findElement(By.cssSelector(".nivo-imageLink>img"));
 
-        //selects the fifth child among its siblings within the class top-menu-triangle
+        //selects the second child among its siblings within the class top-menu-triangle
         driver.findElement(By.cssSelector(".top-menu-triangle:nth-child(2)"));
-        // or the same but using > and nth-child together
+        // or the same as above but using > and nth-child together
         driver.findElement(By.cssSelector(".top-menu>li:nth-child(3)"));
+
+    }
+
+    @Test
+    public void findElementByXpath() {
+        // xpath -> //*[@key='value']
+        //driver.findElement(By.tagName("h2"));
+        driver.findElement(By.xpath("//h2"));
+
+        //driver.findElement(By.id("pollaranswers-1"));
+        driver.findElement(By.id("pollanswers-1"));
+        // or please see the line below
+        driver.findElement(By.xpath("//input[@id='pollanswers-1']"));
+
+        driver.findElement(By.xpath("//*[@class='header-menu']"));
+
+        driver.findElement(By.xpath("//*[@type='submit']"));
+
+        driver.findElement(By.xpath("//*[@href='/producttag/4/apparel']"));
+
+        driver.findElement(By.xpath("//*[contains(.,'Jewel')]"));
+
+        driver.findElement(By.xpath("//*[text()='Categories']"));
+        // or
+        driver.findElement(By.xpath("//*[.='Categories']"));
+
+        //parent  The /.. means "go to the parent of this element." In our case the parent is div of the h2
+        driver.findElement(By.xpath("//h2/.."));
+        // /.. and /parent::* do the same thing: find the parent of the <h2>.
+        driver.findElement(By.xpath("//h2/parent::*"));
+        ///parent::div is more specific and only finds the parent if it's a <div>
+        driver.findElement(By.xpath("//h2/parent::div"));
+
+        // finds the first (closest) ancestor that is wrapping h2, regardless of the tag name.
+        driver.findElement(By.xpath("//h2/ancestor::*"));
+        //finds the nearest wrapping <div>
+        driver.findElement(By.xpath("//h2/ancestor::div"));
+        //this goes up the ancestor tree and picks the second <div> found, the second ancestor <div> is the outer one
+        driver.findElement(By.xpath("//h2/ancestor::div[2]"));
 
     }
 }
