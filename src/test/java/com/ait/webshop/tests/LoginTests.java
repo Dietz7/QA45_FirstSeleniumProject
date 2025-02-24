@@ -7,12 +7,8 @@ import org.testng.annotations.Test;
 public class LoginTests extends TestBase {
     @Test
     public void loginPositiveTest() {
-        //click on Register link
+        //click on Log in link
         click(By.cssSelector("[href='/login']"));
-        //enter First Name
-
-        //better to use id - IDs are faster and more stable, and the element has a unique ID
-        // OR driver.findElement(By.xpath("//*[@id='FirstName']")); good for hierarchical or complex elements searches
 
         type(By.cssSelector("#Email"), "juli777@gmail.com");
 
