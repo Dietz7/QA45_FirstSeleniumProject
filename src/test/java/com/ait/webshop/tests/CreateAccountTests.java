@@ -10,8 +10,8 @@ public class CreateAccountTests extends TestBase {
 
     @BeforeMethod
     public void ensurePrecondition(){
-        if(!app.getUser().isAccountPresent()){
-            app.getUser().login();
+        if(app.getUser().isLoggedIn()){
+            app.getUser().logout();
         }
         }
 

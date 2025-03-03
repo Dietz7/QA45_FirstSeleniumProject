@@ -30,11 +30,11 @@ public class UserHelper extends BaseHelper{
         click(By.cssSelector("[href='/register']"));
     }
 
-    // New overloaded login method
-    public void login() {
-        User defaultUser = new User().setEmail("juli777@gmail.com").setPassword("Qwerty1!$");
-        login(defaultUser); // Calls existing login(User user) method
-    }
+    //New overloaded login method
+   public void login() {
+       User defaultUser = new User().setEmail("juli777@gmail.com").setPassword("Qwerty1!$");
+       login(defaultUser); // Calls existing login(User user) method
+   }
 
     public void login(User user) {
         clickOnLoginLink();
@@ -54,5 +54,13 @@ public class UserHelper extends BaseHelper{
 
     public void confirmLogin() {
         click(By.cssSelector(".login-button"));
+    }
+
+    public boolean isLoggedIn() {
+        return isElementPresent(By.cssSelector(".ico-logout"));
+    }
+
+    public void logout() {
+        click(By.cssSelector(".ico-logout"));
     }
 }

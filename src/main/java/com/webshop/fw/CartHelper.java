@@ -38,4 +38,12 @@ public class CartHelper extends BaseHelper{
         }
        return 0;
     }
+
+    public boolean isLoggedIn() {
+        return isElementPresent(By.cssSelector(".ico-logout"));
+    }
+
+    public void logout() {
+        click(By.cssSelector(".ico-logout"));
+    }
 }

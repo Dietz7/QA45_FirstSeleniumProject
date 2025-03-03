@@ -12,4 +12,9 @@ public class HomePageHelper extends BaseHelper{
         //return driver.findElements(By.xpath("//h2")).size() > 0;
         return isElementPresent(By.xpath("//h2"));
     }
+
+
+    public void clickOnLogo() {
+        click(By.cssSelector(".header-logo a"));
+    }
 }

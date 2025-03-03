@@ -17,14 +17,14 @@ public class TestBase {
     }
 
     //@AfterMethod(enabled = false)
-    @AfterSuite
+    @AfterSuite(enabled = false)
     public void tearDown() {
-        stop();
+       app.stop();
     }
 
-    public void stop() {
-        app.driver.quit();
-    }
+    //public void stop() {
+      //  app.driver.quit();
+   // }
 
 
 }

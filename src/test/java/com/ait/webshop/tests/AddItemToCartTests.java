@@ -8,13 +8,13 @@ import org.testng.annotations.Test;
 
 public class AddItemToCartTests extends TestBase {
 
-   // @BeforeMethod
-    //public void ensurePrecondition() {
-       // if(!app.getUser().isAccountPresent(){
-          //  app.getUser().
-        //}
-
-    //}
+    @BeforeMethod()
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoggedIn()) {
+            app.getUser().login();
+            app.getUser().confirmLogin();
+        }
+    }
 
     @Test
     public void addItemPositiveTest() {

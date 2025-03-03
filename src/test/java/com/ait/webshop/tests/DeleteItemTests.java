@@ -6,7 +6,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class DeleteItemTests extends TestBase {
-
+    @BeforeMethod()
+    public void ensurePrecondition() {
+        if (app.getUser().isLoggedIn()) {
+            app.getUser().logout();
+        }
+    }
 
     @Test
     public void deleteItemPositiveTest(){
