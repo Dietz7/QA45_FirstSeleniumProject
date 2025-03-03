@@ -9,6 +9,8 @@ public class HomePageTests extends TestBase {
         //System.out.println("WelcomeComponent " +isWelcomeComponentPresent());
         // driver.findElement(By.xpath("//h2")); we do not need this line because we call the method
         //isWelcomeComponentPresent();
-        Assert.assertTrue(isWelcomeComponentPresent());
+        Assert.assertTrue(app.getHomePage().isWelcomeComponentPresent());
     }
 }
+
+
